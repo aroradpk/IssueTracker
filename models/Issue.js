@@ -6,3 +6,5 @@ const issueSchema = new mongoose.Schema({
     status: { type: String, default: 'Open'},
     assignedTo: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 }, {timestamps: true});
+
+module.exports = mongoose.model('Issue', issueSchema);
