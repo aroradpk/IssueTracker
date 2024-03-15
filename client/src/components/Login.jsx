@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom'
 export const Login = () => {
     return (
         <>
-            <div class="flex h-screen">
-            <div class="w-full bg-gray-100 lg:w-1/2 flex items-center justify-center">
+            <div class="flex">
+                <div class="w-full bg-gray-100 lg:w-1/2 flex items-center justify-center">
                     <div class="max-w-md w-full p-6">
                         <h1 class="text-3xl font-semibold mb-6 text-black text-center">Log In</h1>
                         <h1 class="text-sm font-semibold mb-6 text-gray-500 text-center">let's track all your tasks at one place</h1>
                         <form action="#" method="POST" class="space-y-4">
                             <div>
                                 <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                                <input type="text" id="email" name="email" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
+                                <input type="text" id="email" name="email" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" />
                             </div>
                             <div>
                                 <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                                <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
+                                <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" />
                             </div>
                             <div>
                                 <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Sign Up</button>
@@ -99,7 +99,7 @@ export const Login = () => {
                         </svg>
                     </div>
                 </div>
-                
+
             </div>
         </>
     )

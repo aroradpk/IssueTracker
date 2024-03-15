@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios';
+import axios from 'axios'
 
 
 export const Signup = () => {
 
     const [user, setUser] = useState({
-        userName : "",
-        email : "",
-        password : "",
-    }) 
-    
+        userName: "",
+        email: "",
+        password: "",
+    })
+
     const navigate = useNavigate();
 
 
@@ -19,7 +19,7 @@ export const Signup = () => {
 
         setUser((prev) => ({
             ...prev,
-            [name] : value
+            [name]: value
         }))
     }
 
@@ -32,19 +32,19 @@ export const Signup = () => {
         //     email : "",
         //     password : "",
         // })
-        
+
         try {
             let endpoint = "http://localhost:5000/api/users/register"
             const res = await axios.post(endpoint, user)
             console.log(res, res.status)
-            if( res.status == 201){
+            if (res.status == 201) {
                 navigate("/login")
             }
             else {
                 alert("code sahi likh le ")
             }
         }
-        catch (err){
+        catch (err) {
             console.log(err)
         }
 
@@ -52,8 +52,8 @@ export const Signup = () => {
 
     useEffect(() => {
         console.log(user)
-    },[user])
-        
+    }, [user])
+
 
 
     return (
@@ -137,30 +137,29 @@ export const Signup = () => {
                         <h1 class="text-sm font-semibold mb-6 text-gray-500 text-center">A fast and modern style issue tracker </h1>
                         <form action="#" method="POST" class="space-y-4">
                             <div>
-                                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-                                <input 
-                                onChange={handleInputChange}
-                                type="text" id="username" name="userName"
-                                 value={user.userName} class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
+                                <input
+                                    onChange={handleInputChange}
+                                    type="text" id="username" name="userName"
+                                    value={user.userName} class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" />
                             </div>
                             <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                                <input type="text" 
-                                onChange={handleInputChange}
-                                value={user.email}
-                                id="email" name="email" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
+
+                                <input type="text"
+                                    onChange={handleInputChange}
+                                    value={user.email}
+                                    id="email" name="email" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" />
                             </div>
                             <div>
-                                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+
                                 <input type="password"
-                                onChange={handleInputChange}
-                                value={user.password}
-                                id="password" name="password" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"/>
+                                    onChange={handleInputChange}
+                                    value={user.password}
+                                    id="password" name="password" class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" />
                             </div>
                             <div>
-                                <button type="submit" 
-                                onClick={handleSubmit}
-                                class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Sign Up</button>
+                                <button type="submit"
+                                    onClick={handleSubmit}
+                                    class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Sign Up</button>
                             </div>
                         </form>
                         <div class="mt-4 text-sm text-gray-600 text-center">
