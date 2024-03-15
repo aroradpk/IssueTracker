@@ -3,63 +3,32 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
     return (
-        <header class="bg-white">
-            <div class="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
-                <a class="block text-teal-600" href="#">
-                    <span class="sr-only">Home</span>
-                </a>
-
-                <div class="flex flex-1 items-center justify-end md:justify-between">
-                    <nav aria-label="Global" class="hidden md:block">
-                        <ul class="flex items-center gap-6 text-sm font-bold">
-                            <li>
-                                <Link to="/" class="text-gray-500 transition hover:text-gray-500/75"> Home </Link>
-                            </li>
-
-                            <li>
-                                <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> API </a>
-                            </li>
-
-                            <li>
-                                <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> Documentation </a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <div class="flex items-center gap-4">
-                        <div class="sm:flex sm:gap-4">
-                            <Link to="/login"
-                                class="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
-                            >
-                                Login
-                            </Link>
-
-                            <Link to="/signup"
-                                class="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
-                            >
-                                Register
-                            </Link>
-                        </div>
-
-                        <button
-                            class="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden"
-                        >
-                            <span class="sr-only">Toggle menu</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-5 w-5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                stroke-width="2"
-                            >
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                        </button>
-                    </div>
+        <>
+            <header className='w-full px-5 py-3 flex justify-between items-center shadow-md'>
+                <div>
+                    {/* logo section */}
+                    <p class="text-2xl font-bold bg-gradient-to-r from-teal-700 to-indigo-700 text-transparent bg-clip-text">
+                        IssueTracker.Io
+                    </p>
                 </div>
-            </div>
-        </header>
+                <div>
+                    <ul className='flex'>
+                        <li>
+                            <Link to="/"
+                                className='text-indigo-600 text-lg font-bold px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md' >Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/"
+                                className='text-slate-400 text-lg px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md'>API</Link></li>
+                        <li>
+                            <Link to="/"
+                                className='text-slate-400 text-lg px-4 py-2 hover:bg-indigo-600 hover:text-white rounded-md'>Documentation</Link>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+        </>
     )
 }
 
