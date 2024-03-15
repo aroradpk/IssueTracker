@@ -1,7 +1,13 @@
 const Issue = require('../models/Issue');
+const Project = require('../models/Project');
 
 exports.createIssue = async (req, res) => {
     try {
+        const project = await Project.findById(req.body.project);
+        if (!project) return res.status(400).send({ error: 'Project not found' });
+        if (!project.members.includes(req.user._id)){
+            return res.status(403).send({error:'User not part of the project'});
+        }
         const issue = new Issue({
             ...req.body,
             creator: req.user._id

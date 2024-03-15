@@ -9,7 +9,7 @@ exports.registerUser = async (req, res) => {
 
         const user = new User({userName, email, password: hashedPassword});
         await user.save();
-        const token = jwt.sign({id: user._id}, process.env.JWT_SECRET);
+        const token = jwt.sign({id: user._id.toString()}, process.env.JWT_SECRET);
         res.status(201).send({user, token});
     } catch (error) {
         res.status(400).send(error)
@@ -27,7 +27,7 @@ exports.userLogin = async (req,res) => {
         if(!isMatch){
             return res.status(400).send('Unable to login');
         }
-        const token = jwt.sign({id: user._id}, process.env.JWT_SECRET);
+        const token = jwt.sign({id: user._id.toString()}, process.env.JWT_SECRET);
         res.send({user,token});  
     } catch (error) {
         res.status(500).send(error)
