@@ -9,20 +9,20 @@ const Dashboard = () => {
 
 
     useEffect(() => {
-        if(!isLogin){
+        if (!isLogin) {
             navigate("/login")
         }
         else {
             navigate("/dashboard")
         }
 
-    },[isLogin])
+    }, [isLogin])
 
-        return (
-            <>
-            { isLogin && <div>hanji pajji</div>}
-            </>
-        )
+    return (
+        <>
+            {isLogin && <div>hanji pajji</div>}
+        </>
+    )
 
 
 }
